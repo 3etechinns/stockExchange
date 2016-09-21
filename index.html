@@ -19,7 +19,7 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" /> 
     <link href="assets/css/styles.css" rel="stylesheet" />  
-    <div class='col-xs-6 col-xs-offset-3' center><h1>Stock Exchange</h1>
+    <div class='col-xs-6 col-xs-offset-6' center><h1>Stock Exchange</h1>
 </head>
 
 <script type="text/javascript">
@@ -52,7 +52,15 @@ function redrawTable(){
 }
 
 $(document).ready(function(){
+
   redrawTable();
+
+  var symbol = $('#search').val();
+  $("#search").submit(function() {
+    symbol = $('#search').val();
+    alert(symbol);
+  });
+
 });
 
 </script>
@@ -70,9 +78,10 @@ $(document).ready(function(){
             </form>
         </div>
       </div>
-
-     <table id="table">
-     </table>
+      <div>
+      <table id="table">
+      </table>
+      </div>
     </div>
 </body>
 
