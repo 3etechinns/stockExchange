@@ -1,9 +1,9 @@
 html { 
-  background: rgb(0,0,90); /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(-45deg, rgb(0,0,90) , grey); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(45deg, rgb(0,0,90) , grey); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(45deg, rgb(0,0,90) , grey); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(45deg, rgb(0,0,90) , grey); /* Standard syntax */ 
+  background: rgb(0,0,77); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(45deg, rgb(0,0,77) , grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(45deg, rgb(0,0,77) , grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(45deg, rgb(0,0,77) , grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(45deg, rgb(0,0,77) , grey); /* Standard syntax */ 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
