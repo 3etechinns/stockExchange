@@ -1,5 +1,9 @@
-html{
-    background-image: url('stock_background.jpeg');
+html { 
+  background: url(stock-background.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body {
   color: #444;
