@@ -56,7 +56,8 @@ $(document).ready(function(){
   redrawTable();
 
   var symbol = $('#search').val();
-  $("#search").submit(function() {
+  $("#search").submit(function(event) {
+    event.preventDefaults();
     symbol = $('#search').val();
     Console.log(symbol);
   });
