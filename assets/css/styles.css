@@ -1,11 +1,12 @@
-body {
-
+html{
     background: navy; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(navy, lightgrey); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(navy, lightgrey); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(navy, lightgrey); /* For Firefox 3.6 to 15 */
     background: linear-gradient(navy, lightgrey); /* Standard syntax */
     background-repeat: no-repeat;
+}
+body {
   color: #444;
   font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
   text-shadow: 0 1px 0 #fff;
