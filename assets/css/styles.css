@@ -123,6 +123,10 @@ tbody:hover tr:hover td {
   text-shadow: 0 1px 0 #fff;
 }
 
+.had-feedback{
+  margin: none !important;
+  padding: none !important;
+}
 .search-form .form-group {
   float: right !important;
   margin: none !important;
