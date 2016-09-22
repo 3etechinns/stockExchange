@@ -161,6 +161,9 @@ tbody:hover tr:hover td {
 }
 .search-form .form-group span.form-control-feedback {
   position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
   display: block;
   width: 34px;
   height: 34px;
