@@ -79,6 +79,7 @@ td {
   border-bottom: 1px solid #e8e8e8;
   padding: 10px 15px;
   position: relative;
+  width: 25%;
   transition: all 300ms;
 }
 
