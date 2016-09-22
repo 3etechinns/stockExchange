@@ -44,8 +44,9 @@ function redrawTable(){
       var price = 0; //search json file
       $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]+'</td><td>'+price+'</td><td><div class="input-group"><input type="text" class="form-control" placeholder="Amount"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></td></tr>');
     };
-    $('#table').append('</tbody>'); 
   }
+    $('#table').append('</tbody>'); 
+
   $('#wallet').append('<h2>Cash: $<em>'+wallet+'</em></h2>');
 
 }
