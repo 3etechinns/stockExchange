@@ -55,9 +55,11 @@ $(document).ready(function(){
 
   redrawTable();
 
-  var symbol = $('#search').val();
-  $("#searchBtn").keypress(function(e) {
-
+  var symbol = '';
+  $("#searchInput").keypress(function(e) {
+    if(e.which == 13){
+        $('#searchBtn').click();
+    }
   });
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
