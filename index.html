@@ -46,7 +46,7 @@
           shares-=amount;
           portfolio[stockSymbol]['amount'] = shares;
           if(shares==0){
-            portfolio.splice(portfolio.indexOf(stockSymbol), 1);
+            delete portfolio[stockSymbol];
           }
           wallet += (amount * price);
           redrawTable();
