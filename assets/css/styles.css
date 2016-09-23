@@ -183,16 +183,16 @@ tbody:hover tr:hover td {
 }
 
 #stockInfo{
-  border: solid, 5px, #444;
+  border: 2px, solid, #444;
   padding: 20px;
 }
 
 #bid{
-  border: solid, 5px, #444;
+  border: 2px, solid, #444;
   padding: 20px;
 }
 
 #ask{
-  border: solid, 5px, #444;
+  border: 2px, solid, #444;
   padding: 20px;
 }
