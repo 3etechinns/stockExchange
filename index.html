@@ -59,8 +59,10 @@ $(document).ready(function(){
 
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
+    var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol;
+    alert(url);
     $.ajax({
-      url: "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
+      url: url,
       dataType: "json",
       success: function(data) {
           var json = $.parseJSON(data);
