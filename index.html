@@ -123,23 +123,22 @@
             }
           });
 
-          // $(':button').click(function() {
-          //   symbol = $(this).attr('id');
-          //   if(portfolio[symbol]){
-          //     alert(portfolio[symbol]);
-          //     shares = $('#'+symbol+'input').val();
-          //     if(shares>0){
-          //       if(portfolio[symbol]['amount']>=shares){
-          //         $('searchInput').val(symbol);
-          //         $('searchBtn').click();
-          //         sell(symbol, shares, sellPrice);
-          //       }
-          //       else{
-          //         alert('You cannot sell more than you own.');
-          //       }
-          //     }
-          //   }
-          // });
+          $(':button').click(function() {
+            temp = $(this).attr('id');
+            if(portfolio[temp]){
+              shares = $('#'+temp+'input').val();
+              if(shares>0){
+                if(portfolio[temp]['amount']>=shares){
+                  $('searchInput').val(temp);
+                  $('searchBtn').click();
+                  sell(temp, shares, sellPrice);
+                }
+                else{
+                  alert('You cannot sell more than you own.');
+                }
+              }
+            }
+          });
 
         });
 
