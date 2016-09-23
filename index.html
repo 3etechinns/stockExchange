@@ -124,7 +124,7 @@
           });
 
           $(':button').click(function() {
-            symbol = $(this).id();
+            symbol = $(this).attr('id');
             if(portfolio[symbol]){
               shares = $('#'+symbol+'input').val();
               if(shares>0){
