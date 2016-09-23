@@ -102,6 +102,8 @@ $(document).ready(function(){
     shares = $('#buyInput').val();
     if(shares>0){
       if((shares*buyPrice)<wallet){
+        shares = parseFloat(shares);
+        buyPrice = parseFloat(buyPrice);
         buy(symbol, shares, buyPrice);
       }
       else{
