@@ -25,21 +25,22 @@ var shares = 0;
 var symbol = '';
 
 function buy(stockSymbol, amount, price){
-    var alreadyOwned = portfolio[stockSymbol];
+    portfolio[stockSymbol]['price'] = price;
+    var alreadyOwned = portfolio[stockSymbol]['shares'];
     if(alreadyOwned){
       alreadyOwned = parseFloat(alreadyOwned);
     }
     else{
       alreadyOwned = 0;
     }
-    portfolio[stockSymbol] = amount+alreadyOwned;
+    portfolio[stockSymbol]['shares'] = amount+alreadyOwned;
     wallet -= (amount * price);
     redrawTable();
 }
 
 function sell(stockSymbol, amount, price){
-    var alreadyOwned = portfolio[stockSymbol];
-    portfolio[stockSymbol] = alreadyOwned-amount;
+    var alreadyOwned = portfolio[stockSymbol]['shares'];
+    portfolio[stockSymbol]['shares'] = alreadyOwned-amount;
     wallet += (amount * price);
     redrawTable();
 }
@@ -52,8 +53,7 @@ function redrawTable(){
   }
   else{
     for (var company in portfolio) { 
-      var price = buyPrice;
-      $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]+'</td><td>'+price+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
+      $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['shares']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
     };
   }
     $('#table').append('</tbody>'); 
