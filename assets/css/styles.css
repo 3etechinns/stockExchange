@@ -178,10 +178,21 @@ tbody:hover tr:hover td {
   padding-right: 2px !important;
 }
 
-.row div{
-  height: 5%;
-}
-
 #header{
   padding: 5%;
+}
+
+#stockInfo{
+  border: 5px, #444;
+  padding: 20px;
+}
+
+#bid{
+  border: 5px, #444;
+  padding: 20px;
+}
+
+#ask{
+  border: 5px, #444;
+  padding: 20px;
 }
