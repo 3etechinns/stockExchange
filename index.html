@@ -126,6 +126,7 @@
           $(':button').click(function() {
             symbol = $(this).attr('id');
             if(portfolio[symbol]){
+              alert(portfolio[symbol]);
               shares = $('#'+symbol+'input').val();
               if(shares>0){
                 if(portfolio[symbol]['amount']>=shares){
