@@ -178,6 +178,17 @@ tbody:hover tr:hover td {
   padding-right: 2px !important;
 }
 
+@media {
+  .table-row {
+    display: table;
+    table-layout: fixed;
+  }
+
+  .table-row [class^="col-"] {
+    display: table-cell;
+    float: none;
+  }
+
 #header{
   padding: 5%;
 }
