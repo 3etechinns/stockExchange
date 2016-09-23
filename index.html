@@ -130,8 +130,20 @@
               shares = $('#'+temp+'input').val();
               if(shares>0){
                 if(portfolio[temp]['amount']>=shares){
-                  $('searchInput').val(temp);
-                  $('searchBtn').click();
+                    var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
+                    $.ajax({
+                      url: url,
+                      dataType: "json",
+                      success: function(data) {
+                        if(data[temp]['name']){
+                          buyPrice = parseFloat(data[temp]['askPrice']);
+                          sellPrice = parseFloat(data[temp]['bidPrice']);
+                          $('#companyName').html('<h2>('+temp+') '+data[temp]['name']+'</h2>');
+                          $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
+                          $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
+                        }
+                      }
+                    });
                   sell(temp, shares, sellPrice);
                 }
                 else{
