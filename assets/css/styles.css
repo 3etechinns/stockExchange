@@ -182,8 +182,13 @@ tbody:hover tr:hover td {
   padding: 5%;
 }
 
-#stockInfo, #companyName, #bid, #ask{
+#stockInfo{
   text-align: center;
-  border: thin solid #444;
+  padding: 20px;
+}
+
+#companyName, #bid, #ask{
+  text-align: center;
+  border: thick solid #444;
   padding: 20px;
 }
