@@ -56,7 +56,7 @@ function redrawTable(){
   }
   else{
     for (var company in portfolio) { 
-      $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
+      $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" id="'+company+'" type="button">Sell</button></span></div></div></td></tr>');
     };
   }
     $('#table').append('</tbody>'); 
@@ -119,15 +119,9 @@ $(document).ready(function(){
       alert('Please enter a positive number.');
     }
 
-  $("#sellInput").keypress(function(e) {
-    if(e.which == 13){
-        $('#sellBtn').click();
-    }
-  });
-
-  $("#sellBtn").click(function() {
+  $('button td').click(function() {
+    alert($(this).id());
     shares = $('#sellInput').val();
-    if ($('#searchInput').val()) {
       if(shares>0){
         if((shares*buyPrice)<wallet){
           shares = parseFloat(shares);
@@ -138,10 +132,6 @@ $(document).ready(function(){
           alert('Insufficient funds.');
         }
       }
-    }
-    else{
-      alert('Please enter a positive number.');
-    }
   });
 
 });
