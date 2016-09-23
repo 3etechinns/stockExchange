@@ -125,8 +125,8 @@
 
           $(':button').click(function() {
             temp = $(this).attr('id');
-            if(portfolio[temp]){
               alert(temp);
+            if(portfolio[temp]){
               shares = $('#'+temp+'input').val();
               if(shares>0){
                 if(portfolio[temp]['amount']>=shares){
