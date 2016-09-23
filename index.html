@@ -68,7 +68,7 @@ $(document).ready(function(){
       url: url,
       dataType: "json",
       success: function(data) {
-        if(data[symbol]){
+        if(data[symbol]['name']){
           $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+' - '+data[symbol]['industry']+'</h2>');
           $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+data[symbol]['bidPrice']+'</h4></div>');
           $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+data[symbol]['askPrice']+'</h4></div>');
