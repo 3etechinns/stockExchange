@@ -118,6 +118,30 @@ $(document).ready(function(){
     else{
       alert('Please enter a positive number.');
     }
+
+  $("#sellInput").keypress(function(e) {
+    if(e.which == 13){
+        $('#sellBtn').click();
+    }
+  });
+
+  $("#sellBtn").click(function() {
+    shares = $('#sellInput').val();
+    if ($('#searchInput').val()) {
+      if(shares>0){
+        if((shares*buyPrice)<wallet){
+          shares = parseFloat(shares);
+          buyPrice = parseFloat(buyPrice);
+          buy(symbol, shares, buyPrice);
+        }
+        else{
+          alert('Insufficient funds.');
+        }
+      }
+    }
+    else{
+      alert('Please enter a positive number.');
+    }
   });
 
 });
@@ -151,8 +175,8 @@ $(document).ready(function(){
 
       <div id="stockInfo" class="col-xs-12">
         <div id="companyName" class="col-xs-10 col-xs-offset-1 grey-gradient"><h2>ENTER STOCK SYMBOL ABOVE</h2></div>
-        <div id="bid" class="col-xs-5 col-xs-offset-1 grey-gradient"><h4>BID</h4></div>
-        <div id="ask" class="col-xs-5 grey-gradient"><h4>ASK</h4></div>
+        <div id="bid" class="col-xs-5 col-xs-offset-1 grey-gradient"></div>
+        <div id="ask" class="col-xs-5 grey-gradient"></div>
         <div class="col-xs-12">
           <div class="col-xs-6 col-xs-offset-3">
             <div class="input-group">
