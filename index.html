@@ -26,7 +26,11 @@ var symbol = '';
 
 function buy(stockSymbol, amount, price){
     portfolio.push([stockSymbol][price]);
-    alert(portfolio[stockSymbol][0]);
+    for(int i = 0; i< portfolio.length; i++){
+      for(int j = 0; j< 2; j++){
+        Console.log(portfolio[i][j]);
+      }
+    }
     var alreadyOwned = portfolio[stockSymbol][0];
     if(alreadyOwned){
       alreadyOwned = parseFloat(alreadyOwned);
