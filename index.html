@@ -33,7 +33,7 @@ function buy(stockSymbol, amount, price){
       alreadyOwned = 0;
     }
     portfolio[stockSymbol] = amount+alreadyOwned;
-    wallet -= Math.round((amount * price)*100)/100;
+    wallet -= (amount * price);
     redrawTable();
 }
 
@@ -58,7 +58,7 @@ function redrawTable(){
   }
     $('#table').append('</tbody>'); 
 
-  $('#wallet').html('<h3>Cash: $<em>'+wallet+'</em></h3>');
+  $('#wallet').html('<h3>Cash: $<em>'+Math.round((wallet)*100)/100+'</em></h3>');
 
 }
 
