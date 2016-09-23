@@ -185,5 +185,8 @@ tbody:hover tr:hover td {
 #stockInfo{
   text-align: center;
   padding: 20px;
+}
+
+#leftBox{
   border-radius: 20%;
 }
