@@ -25,7 +25,7 @@ var shares = 0;
 var symbol = '';
 
 function buy(stockSymbol, amount, price){
-  portfolio[stockSymbol] = ['amount':amount, 'price':price];
+  portfolio[stockSymbol] = {'amount':amount, 'price':price};
     var alreadyOwned = portfolio[stockSymbol]['amount'];
     if(alreadyOwned){
       alreadyOwned = parseFloat(alreadyOwned);
