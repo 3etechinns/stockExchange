@@ -26,10 +26,8 @@ var symbol = '';
 
 function buy(stockSymbol, amount, price){
     var alreadyOwned = portfolio[stockSymbol];
-    if(alreadyOwned){
-      portfolio[stockSymbol] = amount+alreadyOwned;
-    }
-    wallet -= (amount * price);
+    portfolio[stockSymbol] = amount+alreadyOwned;
+    wallet -= Math.round((amount * price)*100)/100;
     redrawTable();
 }
 
@@ -47,13 +45,13 @@ function redrawTable(){
   }
   else{
     for (var company in portfolio) { 
-      var price = buyPrice;
+      var price = 0; //search json file
       $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]+'</td><td>'+price+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
     };
   }
     $('#table').append('</tbody>'); 
 
-  $('#wallet').html('<h3>Cash: $<em>'+wallet+'</em></h3>');
+  $('#wallet').append('<h3>Cash: $<em>'+wallet+'</em></h3>');
 
 }
 
