@@ -60,7 +60,7 @@ $(document).ready(function(){
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
     $.ajax({
-      url: "http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
+      url: "https://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
       dataType: "text",
       success: function(data) {
         alert(data);
