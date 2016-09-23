@@ -36,7 +36,7 @@ table {
   width: 100%;
 } 
 
-th, #companyName, #bid, #ask {
+th, .grey-gradient {
   background: linear-gradient(#777, #444);
   border-left: 1px solid #555;
   border-right: 1px solid #777;
