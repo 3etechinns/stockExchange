@@ -64,7 +64,7 @@ $(document).ready(function(){
       url: url,
       dataType: "json",
       success: function(data) {
-        alert(data[symbol]);
+        alert(data[symbol]['name']);
           $('#companyName').append('<h2>'+data.symbol.name+'</h2>');
       }
     });
