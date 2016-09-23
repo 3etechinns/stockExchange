@@ -56,7 +56,7 @@
         }
         else{
           for (var company in portfolio) { 
-            $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" id="'+company+'" type="button">Sell</button></span></div></div></td></tr>');
+            $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input id="'+company+'input" type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" id="'+company+'" type="button">Sell</button></span></div></div></td></tr>');
           };
         }
         $('#table').append('</tbody>'); 
