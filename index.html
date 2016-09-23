@@ -65,7 +65,7 @@ $(document).ready(function(){
       dataType: "json",
       success: function(data) {
         if(data[symbol]){
-          $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+' - '+data[symbol]['description']'</h2>');
+          $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+' - '+data[symbol]['description']+'</h2>');
         }
         else{
           alert(symbol+' is an invalid symbol. Please enter a new one.');
