@@ -82,8 +82,8 @@ $(document).ready(function(){
           buyPrice = data[symbol]['askPrice'];
           sellPrice = data[symbol]['bidPrice'];
           $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+' - '+data[symbol]['industry']+'</h2>');
-          $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+buyPrice+'</h4></div>');
-          $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+sellPrice+'</h4></div>');
+          $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
+          $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
         }
         else{
           alert(symbol+' is an invalid symbol. Please enter a new one.');
