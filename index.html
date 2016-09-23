@@ -34,10 +34,10 @@ function buy(stockSymbol, amount, price){
     else{
       alreadyOwned = 0;
     }
+    wallet -= (amount * price);
     amount += alreadyOwned;
   portfolio[stockSymbol] = {'amount':amount, 'price':price};
     
-    wallet -= (amount * price);
     redrawTable();
 }
 
