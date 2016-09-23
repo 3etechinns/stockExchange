@@ -25,7 +25,6 @@ var shares = 0;
 var symbol = '';
 
 function buy(stockSymbol, amount, price){
-  portfolio[stockSymbol] = {'amount':amount, 'price':price};
     var alreadyOwned = portfolio[stockSymbol]['amount'];
     if(alreadyOwned){
       alreadyOwned = parseFloat(alreadyOwned);
@@ -33,9 +32,7 @@ function buy(stockSymbol, amount, price){
     else{
       alreadyOwned = 0;
     }
-    portfolio[stockSymbol]['amount'] = amount+alreadyOwned;
-    
-    alert(portfolio[stockSymbol]['amount']);
+  portfolio[stockSymbol] = {'amount':amount, 'price':price};
     
     wallet -= (amount * price);
     redrawTable();
