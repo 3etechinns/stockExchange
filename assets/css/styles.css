@@ -179,14 +179,10 @@ tbody:hover tr:hover td {
 }
 
 #bid, #ask{
-  margin-bottom: 1%;
+  margin-bottom: 5%;
 }
 
 #stockInfo{
   text-align: center;
   padding: 20px;
-}
-
-#leftBox{
-  border-radius: 20%;
 }
