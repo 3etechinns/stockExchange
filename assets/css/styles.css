@@ -36,7 +36,7 @@ table {
   width: 100%;
 } 
 
-th, #stockInfo {
+th, #companyName, #bid, #ask {
   background: linear-gradient(#777, #444);
   border-left: 1px solid #555;
   border-right: 1px solid #777;
@@ -181,14 +181,8 @@ tbody:hover tr:hover td {
 #header{
   padding: 5%;
 }
-/*
+
 #stockInfo{
   text-align: center;
-  padding: 20px;
-}*/
-
-#companyName, #bid, #ask{
-  text-align: center;
-  border: thick solid #444;
   padding: 20px;
 }
