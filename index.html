@@ -32,6 +32,7 @@ function buy(stockSymbol, amount, price){
     else{
       alreadyOwned = 0;
     }
+    amount += alreadyOwned;
   portfolio[stockSymbol] = {'amount':amount, 'price':price};
     
     wallet -= (amount * price);
