@@ -44,6 +44,7 @@
         function sell(stockSymbol, amount, price){
           shares = portfolio[stockSymbol]['amount'];
           shares-=amount;
+          portfolio[stockSymbol]['amount'] = shares;
           if(shares==0){
             portfolio.splice(portfolio.indexOf(stockSymbol), 1);
           }
