@@ -59,7 +59,14 @@ $(document).ready(function(){
 
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
-    alert(symbol);
+    $.ajax({
+      url: "http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
+      dataType: "text",
+      success: function(data) {
+          var json = $.parseJSON(data);
+          $('#companyName').append('<h3>'+json.name+'</h3>');
+      }
+    });
   });
 
 });
