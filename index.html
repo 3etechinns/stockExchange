@@ -63,7 +63,6 @@ $(document).ready(function(){
       url: "http://cors.io/?https://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
       dataType: "text",
       success: function(data) {
-        alert(data);
           var json = $.parseJSON(data);
           $('#companyName').append('<h3>'+json.name+'</h3>');
       }
