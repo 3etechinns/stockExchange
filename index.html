@@ -60,7 +60,7 @@ $(document).ready(function(){
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
     $.ajax({
-      url: "https://cors.io/?http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
+      url: "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
       dataType: "json",
       success: function(data) {
           var json = $.parseJSON(data);
