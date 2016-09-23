@@ -123,7 +123,7 @@
             }
           });
 
-          $(':button').click(function() {
+          $(document).on('click', ':button', function() {
             temp = $(this).attr('id');
               alert(temp);
             if(portfolio[temp]){
