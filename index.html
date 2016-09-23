@@ -39,7 +39,8 @@ function sell(stockSymbol, amount, price){
 }
 
 function redrawTable(){
-  $('#table').html('<thead><tr><th>Company</th><th>Owned</th><th>Price</th><th></th></tr></thead><tbody>');
+  $('#table').html('');
+  $('#table').append('<thead><tr><th>Company</th><th>Owned</th><th>Price</th><th></th></tr></thead><tbody>');
   if (portfolio.length < 1) {
     $('#table').append('<tr><td><strong><em>Your portfolio is currently empty.</em></strong></td></tr>');
   }
@@ -49,7 +50,7 @@ function redrawTable(){
       $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]+'</td><td>'+price+'</td><td><div class="col-xs-12"><div class="input-group"><input type="text" class="form-control"><span class="input-group-btn"><button class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
     };
   }
-    $('#table').html('</tbody>'); 
+    $('#table').append('</tbody>'); 
 
   $('#wallet').html('<h3>Cash: $<em>'+wallet+'</em></h3>');
 
