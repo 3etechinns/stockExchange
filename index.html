@@ -64,8 +64,8 @@ $(document).ready(function(){
       url: url,
       dataType: "json",
       success: function(data) {
-        alert(data['name']);
-          $('#companyName').append('<h2>'+data.name+'</h2>');
+        alert(data.symbol.name);
+          $('#companyName').append('<h2>'+data.symbol.name+'</h2>');
       }
     });
   });
