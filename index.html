@@ -129,7 +129,7 @@
              if(portfolio[temp]){
               shares = $('#'+temp+'input').val();
               if(shares>0){
-                if(portfolio[temp]['amount']>shares){
+                if(portfolio[temp]['amount']>=shares){
                   $('searchInput').val(temp);
                   $('searchBtn').click();
                   sell(temp, shares, sellPrice);
