@@ -60,7 +60,6 @@ $(document).ready(function(){
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
     var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol;
-    alert(url);
     $.ajax({
       url: url,
       dataType: "json",
