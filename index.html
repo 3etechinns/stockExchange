@@ -25,12 +25,8 @@ var shares = 0;
 var symbol = '';
 
 function buy(stockSymbol, amount, price){
-  portfolio[stockSymbol] = [amount, price];
-    for(var i = 0; i< portfolio.length; i++){
-      for(var j = 0; j< 2; j++){
-        console.log(portfolio);
-      }
-    }
+  portfolio[stockSymbol][0] = amount;
+  portfolio[stockSymbol][1] = price;
     var alreadyOwned = portfolio[stockSymbol][0];
     if(alreadyOwned){
       alreadyOwned = parseFloat(alreadyOwned);
@@ -105,14 +101,16 @@ $(document).ready(function(){
 
   $("#buyBtn").click(function() {
     shares = $('#buyInput').val();
-    if(shares>0){
-      if((shares*buyPrice)<wallet){
-        shares = parseFloat(shares);
-        buyPrice = parseFloat(buyPrice);
-        buy(symbol, shares, buyPrice);
-      }
-      else{
-        alert('Insufficient funds.');
+    if ($('#searchInput').val()) {
+      if(shares>0){
+        if((shares*buyPrice)<wallet){
+          shares = parseFloat(shares);
+          buyPrice = parseFloat(buyPrice);
+          buy(symbol, shares, buyPrice);
+        }
+        else{
+          alert('Insufficient funds.');
+        }
       }
     }
     else{
