@@ -56,7 +56,9 @@ $(document).ready(function(){
   redrawTable();
 
   var symbol = $('#search').val();
+  $("#searchBtn").keypress(function(e) {
 
+  });
   $("#searchBtn").click(function() {
     symbol = $('#searchInput').val().toUpperCase();
     var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol;
@@ -110,6 +112,13 @@ $(document).ready(function(){
         <div id="companyName" class="col-xs-10 col-xs-offset-1 grey-gradient"><h2>ENTER STOCK SYMBOL ABOVE</h2></div>
         <div id="bid" class="col-xs-5 col-xs-offset-1 grey-gradient"><h4>BID</h4></div>
         <div id="ask" class="col-xs-5 grey-gradient"><h4>ASK</h4></div>
+        <div class="col-xs-12">
+          <div class="input-group">
+            <input id="buyInput" type="text" class="form-control">
+            <span class="input-group-btn"><button id="buyBtn" class="btn btn-secondary" type="button">Buy</button>
+            </span>
+          </div>
+        </div>
       </div>
 
     </div>
