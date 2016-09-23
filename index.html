@@ -61,7 +61,7 @@ $(document).ready(function(){
     symbol = $('#searchInput').val().toUpperCase();
     $.ajax({
       url: "https://data.benzinga.com/rest/richquoteDelayed?symbols="+symbol,
-      dataType: "text",
+      dataType: "jsonp",
       success: function(data) {
         alert(data);
           var json = $.parseJSON(data);
