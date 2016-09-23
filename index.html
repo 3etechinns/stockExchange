@@ -64,7 +64,12 @@ $(document).ready(function(){
       url: url,
       dataType: "json",
       success: function(data) {
+        if(data[symbol]){
           $('#companyName').html('<h2>'+data[symbol]['name']+'</h2>');
+        }
+        else{
+          alert(symbol+' is an invalid symbol. Please enter a new one.');
+        }
       }
     });
   });
