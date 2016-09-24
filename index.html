@@ -60,7 +60,7 @@
           }
           else{
             for (var company in portfolio) { 
-              $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input id="'+company+'input" type="text" class="form-control"><span class="input-group-btn"><button id="'+company+'" class="btn btn-secondary" type="button">Sell</button></span></div></div></td></tr>');
+              $('#table').append('<tr><td><strong>'+company+'</strong></td><td>'+portfolio[company]['amount']+'</td><td>'+portfolio[company]['price']+'</td><td><div class="col-xs-12"><div class="input-group"><input id="'+company+'input" type="text" class="form-control"><span class="input-group-btn"><button id="'+company+'" class="btn btn-secondary sell" type="button">Sell</button></span></div></div></td></tr>');
             };
           }
           $('#table').append('</tbody>'); 
@@ -126,7 +126,7 @@
             }
           });
 
-          $(document).on('click', ':button', function() {
+          $(document).on('click', ':button.sell', function() {
             temp = $(this).attr('id');
             if(portfolio[temp]){
               shares = $('#'+temp+'input').val();
