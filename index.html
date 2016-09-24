@@ -113,7 +113,7 @@
           $("#buyBtn").click(function() {
             shares = $('#buyInput').val();
             if ($('#companyName').text().includes($('#searchInput').val().toUpperCase())){
-              if(shares>0){
+              if(shares>0 && Math.round(shares) === shares){
                 if((shares*buyPrice)<wallet){
                   shares = parseFloat(shares);
                   buyPrice = parseFloat(buyPrice);
@@ -133,7 +133,7 @@
             temp = $(this).attr('id');
             if(portfolio[temp]){
               shares = $('#'+temp+'input').val();
-              if(shares>0){
+              if(shares>0 && Math.round(shares) === shares){
                 if(portfolio[temp]['amount']>=shares){
                   var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
                   $.ajax({
@@ -155,6 +155,9 @@
                 else{
                   alert('You cannot sell more than you own.');
                 }
+              }
+              else{
+                alert('Please enter a valid number.');
               }
             }
           });
