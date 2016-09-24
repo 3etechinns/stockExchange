@@ -112,7 +112,7 @@
 
           $("#buyBtn").click(function() {
             shares = $('#buyInput').val();
-            if ($('#companyName').val().includes($('#searchInput').val().toUpperCase())){
+            if ($('#companyName').text().includes($('#searchInput').val().toUpperCase())){
               if(shares>0){
                 if((shares*buyPrice)<wallet){
                   shares = parseFloat(shares);
@@ -125,7 +125,7 @@
               }
             }
             else{
-              alert('You entered an invalid number or stock symbol. '+ $('h2').val());
+              alert('You entered an invalid number or stock symbol. '+ $('h2').text());
             }
           });
 
