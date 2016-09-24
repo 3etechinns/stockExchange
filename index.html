@@ -85,15 +85,17 @@
               url: url,
               dataType: "json",
               success: function(data) {
-                if(data[symbol]['name']){
-                  buyPrice = parseFloat(data[symbol]['askPrice']);
-                  sellPrice = parseFloat(data[symbol]['bidPrice']);
-                  $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+'</h2>');
-                  $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
-                  $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
-                }
-                else{
-                  alert(symbol+' is an invalid symbol. Please enter a new one.');
+                if(data[symbol]){
+                  if(data[symbol]['name']){
+                    buyPrice = parseFloat(data[symbol]['askPrice']);
+                    sellPrice = parseFloat(data[symbol]['bidPrice']);
+                    $('#companyName').html('<h2>('+symbol+') '+data[symbol]['name']+'</h2>');
+                    $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
+                    $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
+                  }
+                  else{
+                    alert(symbol+' is an invalid symbol. Please enter a new one.');
+                  }
                 }
               }
             });
@@ -126,24 +128,24 @@
 
           $(document).on('click', ':button', function() {
             temp = $(this).attr('id');
-             if(portfolio[temp]){
+            if(portfolio[temp]){
               shares = $('#'+temp+'input').val();
               if(shares>0){
                 if(portfolio[temp]['amount']>=shares){
-                    var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
-                    $.ajax({
-                      url: url,
-                      dataType: "json",
-                      success: function(data) {
-                        if(data[temp]['name']){
-                          buyPrice = parseFloat(data[temp]['askPrice']);
-                          sellPrice = parseFloat(data[temp]['bidPrice']);
-                          $('#companyName').html('<h2>('+temp+') '+data[temp]['name']+'</h2>');
-                          $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
-                          $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
-                        }
+                  var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
+                  $.ajax({
+                    url: url,
+                    dataType: "json",
+                    success: function(data) {
+                      if(data[temp]['name']){
+                        buyPrice = parseFloat(data[temp]['askPrice']);
+                        sellPrice = parseFloat(data[temp]['bidPrice']);
+                        $('#companyName').html('<h2>('+temp+') '+data[temp]['name']+'</h2>');
+                        $('#bid').html('<div col-xs-12><h4>BID</h4></div><div col-xs-12><h4>$'+Math.round((buyPrice)*100)/100+'</h4></div>');
+                        $('#ask').html('<div col-xs-12><h4>ASK</h4></div><div col-xs-12><h4>$'+Math.round((sellPrice)*100)/100+'</h4></div>');
                       }
-                    });
+                    }
+                  });
                   sell(temp, shares, sellPrice);
                 }
                 else{
