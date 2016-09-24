@@ -112,7 +112,7 @@
 
           $("#buyBtn").click(function() {
             shares = $('#buyInput').val();
-            if ($('#searchInput').val()) {
+            if ($('#searchInput').val().toUpperCase()==symbol) {
               if(shares>0){
                 if((shares*buyPrice)<wallet){
                   shares = parseFloat(shares);
