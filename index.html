@@ -141,6 +141,7 @@
                     dataType: "json",
                     success: function(data) {
                       if(data[temp]['name']){
+                        $('searchInput').val(temp);
                         buyPrice = parseFloat(data[temp]['askPrice']);
                         sellPrice = parseFloat(data[temp]['bidPrice']);
                         $('#companyName').html('<h2>('+temp+') '+data[temp]['name']+'</h2>');
