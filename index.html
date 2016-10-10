@@ -135,7 +135,7 @@
               shares = $('#'+temp+'input').val();
               if(shares>0 && Math.round(shares) == shares){
                 if(portfolio[temp]['amount']>=shares){
-                  var url = "https://crossorigin.me/http://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
+                  var url = "https://crossorigin.me/https://data.benzinga.com/rest/richquoteDelayed?symbols="+temp;
                   $.ajax({
                     url: url,
                     dataType: "json",
